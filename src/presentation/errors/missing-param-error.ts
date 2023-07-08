@@ -9,3 +9,9 @@ export class InvalidParamError extends Error {
     super(`Invalid param: ${paramName}`)
   }
 }
+
+export class ServerError extends Error {
+  constructor () {
+    super('Internal Server Error')
+  }
+}
