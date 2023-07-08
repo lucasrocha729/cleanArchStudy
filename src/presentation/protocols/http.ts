@@ -1,10 +1,10 @@
-interface httpResponse {
+interface HttpResponse {
   body: any
   statusCode: number
 }
 
-interface httpRequest {
+interface HttpRequest {
   body?: any
 }
 
-export type { httpRequest, httpResponse }
+export type { HttpRequest, HttpResponse }
