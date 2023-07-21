@@ -4,8 +4,12 @@
   "description": "Project created to practice concepts of clean architecture",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --silent --noStackTrace --runInBand",
+    "test:details": "jest--runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.ts",
+    "test:integration": "npm test -- --watch -c jest-integration-config.ts",
+    "test:staged": "npm test -- --findRelatedTest",
+    "test:ci": "npm test -- --coverage"
   },
   "author": "",
   "license": "ISC",
