@@ -13,7 +13,7 @@ export class SignUpController implements Controller {
     this.addAccount = addAccount
   }
 
-  handle (httpRequest: HttpRequest): HttpResponse | any {
+  handle (httpRequest: HttpRequest): HttpResponse {
     try {
       const requiredFields = ['name', 'email', 'password', 'passwordConfirmation']
       const { name, email, password, passwordConfirmation } = httpRequest.body
@@ -28,11 +28,16 @@ export class SignUpController implements Controller {
 
       if (!this.emailValidator.isValid(email)) return badRequest(new InvalidParamError('email'))
 
-      this.addAccount.add({
+      const account = this.addAccount.add({
         name,
         email,
         password
       })
+
+      return {
+        body: account,
+        statusCode: 200
+      }
     } catch (error) {
       console.error(error)
       return serverError()
