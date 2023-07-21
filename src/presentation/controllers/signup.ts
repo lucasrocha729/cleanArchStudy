@@ -1,4 +1,4 @@
-import { AddAccount } from './../../domain/usecases/add-account'
+import { AddAccount } from '../../domain/usecases/add-account'
 import { Controller } from './../protocols/controller'
 import { MissingParamError, InvalidParamError } from '../errors'
 import { badRequest, serverError, ok } from '../helpers/http-helper'
