@@ -111,4 +111,22 @@ describe('DbAddAccount use cases', () => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     expect(promise).rejects.toThrow()
   })
+
+  test('should return an account with on success ', async () => {
+    const { sut } = makeSut()
+
+    const accountData = {
+      name: 'valid_name',
+      email: 'valid_mail',
+      password: 'valid_password'
+    }
+    const response = await sut.add(accountData)
+
+    expect(response).toEqual({
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_mail',
+      password: 'hashed_password'
+    })
+  })
 })
