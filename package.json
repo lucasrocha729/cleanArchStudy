@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --silent --noStackTrace --runInBand",
-    "test:details": "jest--runInBand",
+    "test:details": "jest --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.ts",
     "test:integration": "npm test -- --watch -c jest-integration-config.ts",
     "test:staged": "npm test -- --findRelatedTests",
@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@shelf/jest-mongodb": "^4.1.7",
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "^29.5.2",
     "@types/mongodb": "^4.0.7",
